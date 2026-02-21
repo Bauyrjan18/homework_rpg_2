@@ -1,43 +1,8 @@
 package com.narxoz.rpg;
 
-/**
- * Main demonstration class for the RPG Enemy System.
- *
- * ============================================================
- * CREATIONAL PATTERNS CAPSTONE
- * ============================================================
- *
- * This demo must showcase ALL FOUR creational design patterns
- * working together in one unified system:
- *
- *   1. ABSTRACT FACTORY — Create themed enemy component families
- *   2. BUILDER          — Construct complex enemies step-by-step
- *   3. FACTORY METHOD   — Embedded in Builder.build() and Director
- *   4. PROTOTYPE        — Clone enemies into variants efficiently
- *
- * The patterns work together in a pipeline:
- *
- *   Abstract Factory (themed components)
- *          |
- *          v
- *   Builder (assembles enemy from components)
- *          |
- *          v  <-- Factory Method: build() produces the Enemy
- *   Prototype (clones built enemy into variants)
- *
- * ============================================================
- * YOUR TASKS:
- * ============================================================
- *
- * Your Main.java should demonstrate each pattern clearly,
- * then show them working together. Follow the structure below.
- *
- * Expected output flow:
- *   Part 1: Abstract Factory creates themed components
- *   Part 2: Builder constructs complex enemies
- *   Part 3: Prototype clones enemies into variants
- *   Part 4: Full pipeline — all patterns integrated
- */
+import com.narxoz.rpg.factory.EnemyComponentFactory;
+import com.narxoz.rpg.factory.FireComponentFactory;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("=== RPG Enemy System - Creational Patterns Capstone ===\n");
