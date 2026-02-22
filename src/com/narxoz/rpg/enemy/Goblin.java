@@ -32,8 +32,9 @@ public class Goblin implements Enemy {
     }
     public void setName(String name) { this.name = name; }
     public void setHealth(int health) { this.health = health; }
-    @Override public void setAbilities(List<Ability> abilities) { this.abilities = abilities; }
-    @Override public void setLootTable(LootTable lootTable) { this.lootTable = lootTable; }
+    public void setDamage(int damage) { this.damage = damage; }
+    public void setAbilities(List<Ability> abilities) { this.abilities = abilities; }
+    public void setLootTable(LootTable lootTable) { this.lootTable = lootTable; }
 
     public void displayInfo() {
         System.out.println("=== " + name + " (Goblin) ===");

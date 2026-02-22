@@ -1,7 +1,10 @@
 package com.narxoz.rpg;
 
-import com.narxoz.rpg.factory.EnemyComponentFactory;
+import com.narxoz.rpg.builder.BossEnemyBuilder;
+import com.narxoz.rpg.enemy.Enemy;
+import com.narxoz.rpg.enemy.Goblin;
 import com.narxoz.rpg.factory.FireComponentFactory;
+import com.narxoz.rpg.registry.EnemyRegistry;
 
 public class Main {
     public static void main(String[] args) {

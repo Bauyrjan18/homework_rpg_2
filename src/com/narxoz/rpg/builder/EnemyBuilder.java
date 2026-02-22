@@ -11,6 +11,6 @@ public interface EnemyBuilder {
     EnemyBuilder setHealth(int health);
     EnemyBuilder setDamage(int damage);
     EnemyBuilder setAbilities(List<Ability> abilities);
-    EnemyBuilder setLootTable(LootTable loot);
+    EnemyBuilder setLootTable(LootTable lootTable);
     Enemy build();
 }
