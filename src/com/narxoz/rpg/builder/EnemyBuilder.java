@@ -12,5 +12,6 @@ public interface EnemyBuilder {
     EnemyBuilder setDamage(int damage);
     EnemyBuilder setAbilities(List<Ability> abilities);
     EnemyBuilder setLootTable(LootTable lootTable);
+    default EnemyBuilder addPhase(int phase, int threshold) { return this; }
     Enemy build();
 }

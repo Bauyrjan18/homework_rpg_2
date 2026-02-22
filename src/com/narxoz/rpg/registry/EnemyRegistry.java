@@ -5,14 +5,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class EnemyRegistry {
-    private Map<String, Enemy> prototypes = new HashMap<>();
+    private Map<String, Enemy> templates = new HashMap<>();
 
-    public void addPrototype(String key, Enemy enemy) {
-        prototypes.put(key, enemy);
+    public void registerTemplate(String key, Enemy enemy) {
+        templates.put(key, enemy);
     }
 
-    public Enemy getClone(String key) {
-        Enemy e = prototypes.get(key);
+    public Enemy createFromTemplate(String key) {
+        Enemy e = templates.get(key);
         return (e != null) ? e.clone() : null;
     }
 }

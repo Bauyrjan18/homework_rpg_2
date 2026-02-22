@@ -43,14 +43,18 @@ public class DragonBoss implements Enemy {
         this.wingspan = wingspan;
     }
 
-    public String getName() {
-        return name;
-    }
-    public int getHealth() {
-        return health;
-    }
+    @Override public String getName() { return name; }
+    @Override public int getHealth() { return health; }
     @Override public void setName(String name) { this.name = name; }
     @Override public void setHealth(int health) { this.health = health; }
+
+    public void setDamage(int damage) { this.damage = damage; }
+    @Override public void setElement(String element) { this.element = element; }
+    @Override public void multiplyStats(double multiplier) {
+        this.health *= multiplier;
+        this.damage *= multiplier;
+    }
+
     @Override public void setAbilities(List<Ability> abilities) { this.abilities = abilities; }
     @Override public void setLootTable(LootTable lootTable) { this.lootTable = lootTable; }
 

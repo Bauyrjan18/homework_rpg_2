@@ -6,21 +6,16 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Goblin implements Enemy {
-
     private String name;
-    private int health;
-    private int damage;
-    private int defense;
-    private int speed;
-    private List<Ability> abilities;
+    private int health = 100;
+    private int damage = 15;
+    private List<Ability> abilities = new ArrayList<>();
     private LootTable lootTable;
 
     public Goblin(String name) {
         this.name = name;
         this.health = 100;
         this.damage = 15;
-        this.defense = 5;
-        this.speed = 35;
         this.abilities = new ArrayList<>();
     }
 
@@ -33,12 +28,14 @@ public class Goblin implements Enemy {
     public void setName(String name) { this.name = name; }
     public void setHealth(int health) { this.health = health; }
     public void setDamage(int damage) { this.damage = damage; }
+    @Override public void setElement(String element) {};
     public void setAbilities(List<Ability> abilities) { this.abilities = abilities; }
     public void setLootTable(LootTable lootTable) { this.lootTable = lootTable; }
+    @Override public void multiplyStats(double m) { this.health *= m; this.damage *= m; }
 
     public void displayInfo() {
         System.out.println("=== " + name + " (Goblin) ===");
-        System.out.println("Health: " + health + " | Damage: " + damage + " | Defense: " + defense + " | Speed: " + speed);
+        System.out.println("Health: " + health + " | Damage: " + damage + " | Defense: ");
         System.out.println("Abilities: " + abilities.size() + " ability(ies)");
         if (lootTable != null) System.out.println(lootTable.getLootInfo());
     }
@@ -48,15 +45,9 @@ public class Goblin implements Enemy {
         Goblin copy = new Goblin(this.name);
         copy.health = this.health;
         copy.damage = this.damage;
-        copy.defense = this.defense;
-        copy.speed = this.speed;
-        // Глубокое копирование способностей
         copy.abilities = new ArrayList<>();
         for (Ability a : this.abilities) copy.abilities.add(a.clone());
-        // Глубокое копирование лута
         if (this.lootTable != null) copy.lootTable = this.lootTable.clone();
         return copy;
     }
-
-
 }

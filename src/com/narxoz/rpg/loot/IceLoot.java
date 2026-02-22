@@ -7,8 +7,7 @@ public class IceLoot implements LootTable {
     private List<String> items = new ArrayList<>();
 
     public IceLoot() {
-        items.add("Кусок льда");
-        items.add("Синее зелье");
+        items.add("Ice Chunk");
     }
 
     @Override
@@ -27,9 +26,7 @@ public class IceLoot implements LootTable {
     }
 
     @Override
-    public String getLootInfo() {
-        return "Лут: предметов - " + items.size() + ", золото - " + getGoldDrop() + ", опыт - " + getExperienceDrop();
-    }
+    public String getLootInfo() { return "Loot: Ice Items"; }
 
     @Override
     public LootTable clone() {
