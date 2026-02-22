@@ -5,13 +5,12 @@ import com.narxoz.rpg.loot.LootTable;
 import java.util.List;
 
 public interface Enemy {
-    void setName(String name);
-    void setHealth(int health);
-    void setDamage(int damage);
-    void setAbilities(List<Ability> abilities);
-    void setLootTable(LootTable loot);
     String getName();
     int getHealth();
-    void showInfo();
+    void setName(String name);
+    void setHealth(int health);
+    void setAbilities(List<Ability> abilities);
+    void setLootTable(LootTable lootTable);
+    void displayInfo();
     Enemy clone();
 }
